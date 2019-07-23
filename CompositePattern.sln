@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositePattern.Core", "CompositePattern.Core\CompositePattern.Core.csproj", "{71005D5E-7F16-423B-A1B5-8FC5BF968D26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositePattern.Specs", "CompositePattern.Specs\CompositePattern.Specs.csproj", "{48718A9C-ED27-41DF-8F79-6EDB3F07E74E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71005D5E-7F16-423B-A1B5-8FC5BF968D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71005D5E-7F16-423B-A1B5-8FC5BF968D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71005D5E-7F16-423B-A1B5-8FC5BF968D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71005D5E-7F16-423B-A1B5-8FC5BF968D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48718A9C-ED27-41DF-8F79-6EDB3F07E74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48718A9C-ED27-41DF-8F79-6EDB3F07E74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48718A9C-ED27-41DF-8F79-6EDB3F07E74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48718A9C-ED27-41DF-8F79-6EDB3F07E74E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
