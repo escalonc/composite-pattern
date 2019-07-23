@@ -6,12 +6,11 @@ namespace CompositePattern.Core
 {
     public abstract class Salable
     {
-        private IEnumerable<Salable> _salables;
+        protected IEnumerable<Salable> _salables;
 
-        protected Salable(string name, decimal price, int quantity, decimal discount, bool isComposite)
+        protected Salable(string name, int quantity, decimal discount, bool isComposite)
         {
             Name = name;
-            Price = price;
             Quantity = quantity;
             IsComposite = isComposite;
             Discount = discount;
@@ -20,7 +19,7 @@ namespace CompositePattern.Core
 
         public string Name { get; }
         
-        public decimal Price { get; }
+        public abstract decimal Price { get; }
         
         public decimal Quantity { get; }
         
@@ -34,7 +33,8 @@ namespace CompositePattern.Core
         {
             _salables = _salables.Append(salable);
         }
-        
 
+
+        public abstract decimal subTotal();
     }
 }

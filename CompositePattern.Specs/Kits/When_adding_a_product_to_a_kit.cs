@@ -2,7 +2,7 @@ using CompositePattern.Core;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace CompositePattern.Specs
+namespace CompositePattern.Specs.Kits
 {
     class When_adding_a_product_to_a_kit
     {

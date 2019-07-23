@@ -17,4 +17,8 @@
       <ProjectReference Include="..\CompositePattern.Core\CompositePattern.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Projects" />
+    </ItemGroup>
+
 </Project>
