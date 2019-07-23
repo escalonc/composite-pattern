@@ -5,7 +5,7 @@ namespace CompositePattern.Core.Services
 {
     public class InvoiceService
     {
-        public decimal Calculate(params Salable[] salables)
+        public decimal Calculate(params ISalableComponent[] salableComponents)
         {
             throw new NotImplementedException();
         }

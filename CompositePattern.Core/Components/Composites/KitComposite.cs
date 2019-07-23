@@ -1,30 +1,59 @@
+using System.Collections.Generic;
 using System.Linq;
 using CompositePattern.Core.Components.Base;
 
 namespace CompositePattern.Core.Components.Composites
 {
-    public class Kit : Salable
+    public class KitComposite : ISalableComponent
     {
-        public Kit(string name) : base(name, 1, 0, false)
+        private IEnumerable<ISalableComponent> _salables;
+        
+        public string Name { get; }
+
+        public decimal Quantity { get; }
+        
+        public decimal Discount { get; }
+        
+        public bool IsComposite { get; }
+        
+        public int SubItemsCount => _salables.Count();
+
+        public decimal SubTotal => (_salables.Sum(salable => salable.SubTotal) * Quantity) - Discount;
+        
+        public decimal Price => _salables.Sum(salable => salable.Price);
+        
+        public KitComposite(string name) 
         {
-            
+            Name = name;
+            Quantity = 1;
+            Discount = 0;
+            IsComposite = true;
+            _salables = Enumerable.Empty<ISalableComponent>();
         }
         
-        public Kit(string name, int quantity) : base(name, quantity, 0, false)
+        public KitComposite(string name, int quantity) 
         {
-            
+            Name = name;
+            Quantity = quantity;
+            Discount = 0;
+            IsComposite = true;
+            _salables = Enumerable.Empty<ISalableComponent>();
         }
         
-        public Kit(string name, int quantity, decimal discount) : base(name, quantity, discount, false)
+        public KitComposite(string name, int quantity, decimal discount)
         {
-            
+            Name = name;
+            Quantity = quantity;
+            Discount = discount;
+            IsComposite = true;
+            _salables = Enumerable.Empty<ISalableComponent>();
         }
-
-        public override decimal Price => Salables.Sum(salable => salable.Price);
-
-        public override decimal subTotal()
+        
+        public void Add(ISalableComponent salableComponent)
         {
-            return Salables.Sum(value => value.subTotal()) * Quantity;
+            _salables = _salables.Append(salableComponent);
         }
+        
     }
+    
 }

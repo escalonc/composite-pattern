@@ -9,27 +9,27 @@ namespace CompositePattern.Specs.Projects
 {
     public class When_calculating_the_subtotal_of_a_project
     {
-        private static Salable _firstProduct;
-        private static Salable _secondProduct;
-        private static Salable _kitchenKits;
-        private static Salable _projectSweetHome;
+        private static ISalableComponent _firstProduct;
+        private static ISalableComponent _secondProduct;
+        private static ISalableComponent _kitchenKits;
+        private static ISalableComponent _projectSweetHome;
         
         private static decimal _subTotal;
         private Establish context = () =>
         {
-            _firstProduct = new Product("Ceramic", 3,5,0);
-            _secondProduct = new Product("Furniture", 100,1,0);
+            _firstProduct = new ProductComponent("Ceramic", 3,5,0);
+            _secondProduct = new ProductComponent("Furniture", 100,1,0);
             
-            _kitchenKits = new Kit("Kitchen Kit", 2);
+            _kitchenKits = new KitComposite("Kitchen Kit", 2);
             
             _kitchenKits.Add(_firstProduct);
             _kitchenKits.Add(_secondProduct);
             
-            _projectSweetHome = new Project("Sweet Home");
+            _projectSweetHome = new ProjectComposite("Sweet Home");
             _projectSweetHome.Add(_kitchenKits);
         };
 
-        private Because of = () => { _subTotal = _kitchenKits.subTotal(); };
+        private Because of = () => { _subTotal = _kitchenKits.SubTotal; };
 
         private It should_return_two_hundred_and_thirty_usd = () => { _subTotal.Should().Be(230); };
     }

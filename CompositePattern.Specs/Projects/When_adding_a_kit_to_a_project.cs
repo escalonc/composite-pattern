@@ -8,14 +8,14 @@ namespace CompositePattern.Specs.Projects
 {
     class When_adding_a_kit_to_a_project
     {
-        private static Salable _project;
+        private static ISalableComponent _project;
         private static int _itemsCount;
                 
         private Establish context = () =>
         {
-            _project = new Project("Kitchen");
+            _project = new ProjectComposite("Kitchen");
             
-            _project.Add(new Kit("Kitchen"));
+            _project.Add(new KitComposite("Kitchen"));
         };
         
         private Because of = () =>
