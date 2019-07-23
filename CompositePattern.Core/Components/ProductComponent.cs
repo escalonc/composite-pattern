@@ -1,4 +1,6 @@
-namespace CompositePattern.Core
+using CompositePattern.Core.Components.Base;
+
+namespace CompositePattern.Core.Components
 {
     public class Product : Salable
     {

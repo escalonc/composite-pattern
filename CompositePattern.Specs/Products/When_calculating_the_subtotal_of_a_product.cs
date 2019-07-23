@@ -1,4 +1,6 @@
 using CompositePattern.Core;
+using CompositePattern.Core.Components;
+using CompositePattern.Core.Components.Base;
 using FluentAssertions;
 using Machine.Specifications;
 

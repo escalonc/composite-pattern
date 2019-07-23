@@ -1,4 +1,7 @@
-namespace CompositePattern.Core
+using System.Linq;
+using CompositePattern.Core.Components.Base;
+
+namespace CompositePattern.Core.Components.Composites
 {
     public class Project : Salable
     {
@@ -18,7 +21,7 @@ namespace CompositePattern.Core
 
         public override decimal subTotal()
         {
-            throw new System.NotImplementedException();
+            return Salables.Sum(value => value.subTotal()) * Quantity;
         }
     }
 }

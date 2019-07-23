@@ -1,8 +1,10 @@
 using CompositePattern.Core;
+using CompositePattern.Core.Components.Base;
+using CompositePattern.Core.Components.Composites;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace CompositePattern.Specs.Kits
+namespace CompositePattern.Specs.Projects
 {
     class When_adding_a_kit_to_a_project
     {
@@ -11,8 +13,9 @@ namespace CompositePattern.Specs.Kits
                 
         private Establish context = () =>
         {
-            _project = new Project("Kitchen", 5000);
-            _project.Add(new Kit("Kitchen", 182.5M));
+            _project = new Project("Kitchen");
+            
+            _project.Add(new Kit("Kitchen"));
         };
         
         private Because of = () =>

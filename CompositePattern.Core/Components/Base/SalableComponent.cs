@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CompositePattern.Core
+namespace CompositePattern.Core.Components.Base
 {
     public abstract class Salable
     {
-        protected IEnumerable<Salable> _salables;
+        protected IEnumerable<Salable> Salables;
 
         protected Salable(string name, int quantity, decimal discount, bool isComposite)
         {
@@ -14,7 +13,7 @@ namespace CompositePattern.Core
             Quantity = quantity;
             IsComposite = isComposite;
             Discount = discount;
-            _salables = new List<Salable>();
+            Salables = Enumerable.Empty<Salable>();
         }
 
         public string Name { get; }
@@ -27,11 +26,11 @@ namespace CompositePattern.Core
         
         public bool IsComposite { get; }
 
-        public int SubItemsCount => _salables.Count();
+        public int SubItemsCount => Salables.Count();
         
         public void Add(Salable salable)
         {
-            _salables = _salables.Append(salable);
+            Salables = Salables.Append(salable);
         }
 
 
