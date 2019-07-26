@@ -52,6 +52,6 @@ namespace CompositePattern.Core.Components
             throw new System.NotImplementedException();
         }
 
-        public decimal SubTotal => Price * Quantity;
+        public decimal SubTotal => (Price * Quantity) - Discount;
     }
 }

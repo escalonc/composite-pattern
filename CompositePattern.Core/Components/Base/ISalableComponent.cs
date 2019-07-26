@@ -17,8 +17,8 @@ namespace CompositePattern.Core.Components.Base
 
         int SubItemsCount { get; }
 
-        void Add(ISalableComponent salableComponent);
-        
         decimal SubTotal { get; }
+        
+        void Add(ISalableComponent salableComponent);
     }
 }

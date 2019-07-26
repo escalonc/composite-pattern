@@ -29,8 +29,8 @@ namespace CompositePattern.Specs.Projects
             _projectSweetHome.Add(_kitchenKits);
         };
 
-        private Because of = () => { _subTotal = _kitchenKits.SubTotal; };
+        private Because of = () => _subTotal = _kitchenKits.SubTotal;
 
-        private It should_return_two_hundred_and_thirty_usd = () => { _subTotal.Should().Be(230); };
+        private It should_return_two_hundred_and_thirty_usd = () => _subTotal.Should().Be(230);
     }
 }

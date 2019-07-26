@@ -1,13 +1,14 @@
 using System;
+using System.Linq;
 using CompositePattern.Core.Components.Base;
 
 namespace CompositePattern.Core.Services
 {
-    public class InvoiceService
+    public class InvoiceService : IInvoiceService
     {
-        public decimal Calculate(params ISalableComponent[] salableComponents)
+        public decimal Calculate(decimal discount, params ISalableComponent[] salableComponents)
         {
-            throw new NotImplementedException();
+            return (salableComponents.Sum(salable => salable.SubTotal) - discount);
         }
     }
 }

@@ -14,7 +14,6 @@ namespace CompositePattern.Specs.Projects
         private Establish context = () =>
         {
             _project = new ProjectComposite("Kitchen");
-            
             _project.Add(new KitComposite("Kitchen"));
         };
         

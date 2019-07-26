@@ -15,8 +15,8 @@ namespace CompositePattern.Specs.Products
             _product = new ProductComponent("Ceramic", 3,5,0);
         };
 
-        private Because of = () => { _subTotal = _product.SubTotal; };
+        private Because of = () => _subTotal = _product.SubTotal;
 
-        private It should_return_fifteen_usd = () => { _subTotal.Should().Be(15); };
+        private It should_return_fifteen_usd = () => _subTotal.Should().Be(15);
     }
 }
