@@ -1,4 +1,3 @@
-using CompositePattern.Core;
 using CompositePattern.Core.Components.Base;
 using CompositePattern.Core.Components.Composites;
 using FluentAssertions;

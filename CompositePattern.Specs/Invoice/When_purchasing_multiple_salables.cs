@@ -1,4 +1,3 @@
-using System.Xml.Schema;
 using CompositePattern.Core.Components;
 using CompositePattern.Core.Components.Base;
 using CompositePattern.Core.Components.Composites;

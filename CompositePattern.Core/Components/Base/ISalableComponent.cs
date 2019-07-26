@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-
 namespace CompositePattern.Core.Components.Base
 {
     public interface ISalableComponent
