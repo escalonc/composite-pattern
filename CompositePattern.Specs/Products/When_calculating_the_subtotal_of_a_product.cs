@@ -1,5 +1,6 @@
 using CompositePattern.Core.Components;
 using CompositePattern.Core.Components.Base;
+using CompositePattern.Core.Components.Composites;
 using FluentAssertions;
 using Machine.Specifications;
 
@@ -11,7 +12,7 @@ namespace CompositePattern.Specs.Products
         private static decimal _subTotal;
         private Establish context = () =>
         {
-            _product = new ProductComponent("Ceramic", 3,5,0);
+            _product = new ProductComposite("Ceramic", 3,5,0);
         };
 
         private Because of = () => _subTotal = _product.SubTotal;

@@ -15,10 +15,10 @@ namespace CompositePattern.Specs.Kits
         private static decimal _subTotal;
         private Establish context = () =>
         {
-            _firstProduct = new ProductComponent("Ceramic", 3,5,0);
-            _secondProduct = new ProductComponent("Furniture", 100,1,0);
+            _firstProduct = new ProductComposite("Ceramic", 3,5,0);
+            _secondProduct = new ProductComposite("Furniture", 100,1,0);
             
-            _kitchenKit = new KitComposite("Kitchen Kit");
+            _kitchenKit = new ProductComposite("Kitchen Kit", 1, 0M, true);
             
             _kitchenKit.Add(_firstProduct);
             _kitchenKit.Add(_secondProduct);

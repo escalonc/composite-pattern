@@ -13,8 +13,8 @@ namespace CompositePattern.Specs.Kits
                 
         private Establish context = () =>
         {
-            _kit = new KitComposite("Kitchen", 2500);
-            _kit.Add(new ProductComponent("Ceramic", (decimal)182.5,6));
+            _kit = new ProductComposite("Kitchen", 1, 0M, true);
+            _kit.Add(new ProductComposite("Ceramic", 182.5M,6));
         };
         
         private Because of = () =>

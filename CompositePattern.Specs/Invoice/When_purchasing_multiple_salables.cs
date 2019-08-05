@@ -20,13 +20,13 @@ namespace CompositePattern.Specs.Invoice
         {
             _invoiceService = new InvoiceService();
             
-            _productOne = new ProductComponent("Ceramic", 3,5);
-            _productTwo = new ProductComponent("Furniture", 150,1);
+            _productOne = new ProductComposite("Ceramic", 3M,5);
+            _productTwo = new ProductComposite("Furniture", 150M,1);
             
-            _kitchenKit = new KitComposite("Kitchen Kit");
+            _kitchenKit = new ProductComposite("Kitchen Kit",  1,0M,true);
             _kitchenKit.Add(_productTwo);
             
-            _mySweetHomeProject = new ProjectComposite("Project");
+            _mySweetHomeProject = new ProductComposite("Project",1,0M,true);
             _mySweetHomeProject.Add(_kitchenKit);
             
         };
